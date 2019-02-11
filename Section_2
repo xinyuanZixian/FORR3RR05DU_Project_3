@@ -1,1 +1,14 @@
-
+If we set the quantity of disks as n, we need T(n) moves
+Move disks from A to C: T(n - 1)
+Move the largest disk from A to B: 1
+Move disks from C to B: T(n - 1)
+T(n) = T(n - 1) + 1 + T(n - 1)
+T(n) = 2T(n - 1) + 1
+T(n) = 2 ^ 1 * T(n - 1) + 1
+T(n) = 2 ^ 2 * T(n - 2) + 1
+.
+.
+.
+T(n) = 2 ^ (n - 1) * T(n - (n - 1)) + 1
+T(n) = 2 ^ (n - 1) * T(1) + 1
+So the answer is O(2 ^ n)
